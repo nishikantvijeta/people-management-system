@@ -1,0 +1,104 @@
+<div class="container-fluid g-0">
+
+  <!-- HEADER -->
+  <app-header></app-header>
+
+  <!-- MAIN CONTENT -->
+  <main class="black-borde">
+
+    <!-- TOOLBAR TO ADD AND SEARCH PEOPLE -->
+    <div class="toolbar">
+
+      <div class="add-people">
+        <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal"
+          data-bs-target="#exampleModal" #addPersonButton>Add Person</button>
+      </div>
+
+      <div class="search-people">
+        <input type="search" class="form-control" placeholder="Search People"
+          (input)="searchPeople(searchInput.value)" #searchInput>
+      </div>
+
+    </div>
+
+    <!-- DISPLAY AREA -->
+    <div class="people">
+      <div class="row mt-5" *ngIf="peoples.length == 0">
+        <div class="col text-center">
+          <span class="text-secondary fs-2 fw-bold fst-italic">There are No People Added!</span>
+        </div>
+      </div>
+
+      <div class="row mt-4" *ngFor="let people of peoplesToDisplay; let ei = index;">
+        <div class="col">
+          <app-people [people]="people" (onRemovePeople)="removePeople($event)"
+            (onEditPeople)="editPeople($event)"></app-people>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- MODAL FOR ADDING PERSON -->
+<div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Enter Person Information</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <form [formGroup]="peopleForm">
+
+          <!-- FULL NAME -->
+          <div class="row mb-3">
+            <div class="col">
+              <label for="fullname" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="fullname" placeholder="Enter full name" formControlName="fullname">
+            </div>
+          </div>
+
+          <!-- AGE -->
+          <div class="row mb-3">
+            <div class="col">
+              <label for="age" class="form-label">Age</label>
+              <input type="number" class="form-control" id="age" placeholder="Enter age" formControlName="age">
+            </div>
+          </div>
+
+          <!-- MOBILE NUMBER -->
+          <div class="row mb-3">
+            <div class="col">
+              <label for="mobile" class="form-label">Mobile Number</label>
+              <input type="tel" class="form-control" id="mobile" placeholder="Enter mobile number" formControlName="mobile">
+            </div>
+          </div>
+
+          <!-- GENDER -->
+          <div class="row mb-3">
+            <div class="col">
+              <label class="form-label">Gender</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="male" value="male" formControlName="gender" name="gender">
+                <label class="form-check-label" for="male">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="female" value="female" formControlName="gender" name="gender">
+                <label class="form-check-label" for="female">Female</label>
+              </div>
+            </div>
+          </div>
+
+        
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addPeople()">Insert</button>
+      </div>
+
+    </div>
+  </div>
+</div>

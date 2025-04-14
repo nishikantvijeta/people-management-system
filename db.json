@@ -1,0 +1,60 @@
+{
+  "posts": [
+    {
+      "id": "2",
+      "name": "Anjali Sharma",
+      "gender": "Female",
+      "age": 29,
+      "mobile": "9123456780"
+    },
+    {
+      "id": "3",
+      "name": "Rahul Verma",
+      "gender": "Male",
+      "age": 34,
+      "mobile": "9898989898"
+    },
+    {
+      "id": "4",
+      "name": "Sneha Patel",
+      "gender": "Female",
+      "age": 26,
+      "mobile": "9786543210"
+    },
+    {
+      "id": "5",
+      "name": "Amit Singh",
+      "gender": "Male",
+      "age": 31,
+      "mobile": "9678901234"
+    },
+    {
+      "id": "6",
+      "name": "Priya Mehta",
+      "gender": "Female",
+      "age": 23,
+      "mobile": "9345678123"
+    },
+    {
+      "id": "7",
+      "name": "Ravi Chauhan",
+      "gender": "Male",
+      "age": 28,
+      "mobile": "9001234567"
+    },
+    {
+      "id": "8",
+      "name": "Neha Joshi",
+      "gender": "Female",
+      "age": 30,
+      "mobile": "9109876543"
+    },
+    {
+      "id": "9",
+      "name": "Vikram Yadav",
+      "gender": "Male",
+      "age": 40,
+      "mobile": "9812345678"
+    }
+  ]
+}
